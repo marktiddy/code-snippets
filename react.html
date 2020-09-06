@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Code Snippets</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h1>Code Snippets</h1>
+        <p>Find snippets for your favourite projects</p>
+        <nav>
+          <ul id="menu"></ul>
+        </nav>
+      </div>
+      <div class="main">
+        <h2>React Code Snippets</h2>
+        <div class="code-area">
+          <h3>Context</h3>
+          <p class="note">
+            Use this to create a context to pass data into all components<br /><br />
+          </p>
+          <button class="copy-button">Copy Code</button>
+          <code>
+            import React, {useState,useEffect} from 'react' <br /><br />export
+            const MainContext = React.createContext();<br />
+            <br />export const MainProvider = ({ children }) =&#62; {<br />
+            const [appData, setAppData] = useState(data_to_use.data);
+            <br /><br />const getData = () =&#62; {<br />
+            //Could make API request and then populate the data here<br />
+            };<br /><br />
+            useEffect(() =&#62; {<br />
+            //Could call our get data function here <br />}, []);
+            <br /><br />return (<br />
+            &#60;MainContext.Provider value={{ appData, setAppData }} &#62;
+            <br />{children}<br />
+            &#60;/MainContext.Provider&#62; <br />); <br /><br />};
+          </code>
+        </div>
+        <div class="code-area">
+          <h3>Wrapping the Context in App.js</h3>
+
+          <button class="copy-button">Copy Code</button>
+          <code>
+            import { MainProvider } from './MainContext; <br /><br />
+            const App = () =&#62; {
+            <br />
+            return (<br />
+            &#60;MainProvider&#62;<br />
+            &#60;AppComponent /&#62;<br />
+            &#60;/MainProvider&#62; <br />)<br />
+            }</code
+          >
+        </div>
+        <div class="code-area">
+          <h3>Using the Context in a Component</h3>
+
+          <button class="copy-button">Copy Code</button>
+          <code>
+            import React, {useContext} from 'react' <br />import { MainContext}
+            from 'MainContext'<br /><br />
+            const AScreen = () =&#62; {<br />
+            const {appData} = useContext(MainContext) <br />}</code
+          >
+        </div>
+      </div>
+    </div>
+    <footer>&copy; Mark Tiddy 2020</footer>
+  </body>
+  <script src="scripts.js"></script>
+</html>

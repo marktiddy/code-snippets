@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Code Snippets</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h1>Code Snippets</h1>
+        <p>Find snippets for your favourite projects</p>
+        <nav>
+          <ul id="menu"></ul>
+        </nav>
+      </div>
+      <div class="main">
+        <h2>Wordpress Code Snippets</h2>
+        <div class="code-area">
+          <h3>Custom Post Type</h3>
+          <p class="note">
+            You might declare this in a mu-plugins folder or in a plugin<br /><br />
+          </p>
+          <button class="copy-button">Copy Code</button>
+          <code
+            >register_post_type('GIVE_IT_A_NAME', array( <br />'show_in_rest'
+            =&#62; true, <br />'supports' =&#62; array('title', 'editor'),<br />
+            'capability_type' =&#62; 'GIVE_IT_A_NAME', <br />'map_meta_cap'
+            =&#62; true,<br />
+            'rewrite' =&#62; array(<br />
+            'slug' =&#62; 'GIVE_IT_A_NAME', ),<br />
+            'has_archive' =&#62; true,<br />
+            'public' =&#62; true, 'labels' =&#62; array( <br />'name' =&#62;
+            'GIVE_IT_A_NAME',<br />
+            'add_new_item' =&#62; 'Add New GIVE_IT_A_NAME', <br />'edit_item'
+            =&#62; 'Edit GIVE_IT_A_NAME',<br />
+            'all_items' =&#62; 'All GIVE_IT_A_NAME',<br />
+            'singular_name' =&#62; 'GIVE_IT_A_NAME', ), <br />'menu_icon' =&#62;
+            'dashicons-PICK-ICON',<br />
+            ));</code
+          >
+        </div>
+        <div class="code-area">
+          <h3>Enqueue a Stylesheet</h3>
+          <p class="note">
+            Typically goes in functions.php within a function that is called
+            with add_action<br /><br />
+          </p>
+          <button class="copy-button">Copy Code</button>
+          <code>
+            wp_enqueue_style('font-awesome',
+            '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');</code
+          >
+        </div>
+        <div class="code-area">
+          <h3>Enqueue a JavaScript File</h3>
+          <p class="note">
+            Typically goes in functions.php within a function that is called
+            with add_action<br /><br />
+          </p>
+          <button class="copy-button">Copy Code</button>
+          <code>
+            wp_enqueue_script('NAME_OF_FILE',
+            'http://localhost:3000/bundled.js', null, '1.0', true);</code
+          >
+          <div class="code-area">
+            <h3>Add an Action from a Function</h3>
+
+            <button class="copy-button">Copy Code</button>
+            <code> add_action('wp_enqueue_scripts', 'FUNCTION_NAME'); </code>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>&copy; Mark Tiddy 2020</footer>
+  </body>
+  <script src="scripts.js"></script>
+</html>
