@@ -9,6 +9,7 @@ const menuObject = [
     name: "React",
     link: "react.html",
   },
+  {name:'Parcel JS',link:'parcel.html'}
 ];
 
 const menuArea = document.getElementById("menu");
